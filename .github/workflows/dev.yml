@@ -7,5 +7,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Sync to S3
-        run : |
-          echo "hi"
+        run : echo "${GITHUB_BRANCH##*/}"
+        env:
+          GITHUB_BRANCH: ${{ github.ref }}
