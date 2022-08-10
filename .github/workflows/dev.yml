@@ -6,7 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Sync to S3
-        run : echo "${GITHUB_BRANCH##*/}"
-        env:
-          GITHUB_BRANCH: ${{ github.ref }}
+      - name: Testing
+        run : |
+          if(${GITHUB_BRANCH##*/}=="development") 
+           echo "${GITHUB_BRANCH##*/}" 
+          if(${GITHUB_BRANCH##*/}=="staging")
+           echo "${GITHUB_BRANCH##/}"
