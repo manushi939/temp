@@ -13,6 +13,6 @@ jobs:
            echo "Test Successfull in main"
            
       - name: Purge all files from Imgix Dev
-        if: ${{ github.ref == 'refs/heads/main/staging' }}
+        if: ${{ github.ref == 'refs/heads/main/development' }}
         run:
            echo "Test Successfull in dev"
