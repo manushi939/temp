@@ -16,3 +16,13 @@ jobs:
         if: ${{ github.ref == 'refs/heads/development' }}
         run:
            echo "Test Successfull in dev"
+           
+      - name: Purge all files from Imgix Dev
+        if: ${{ github.ref == 'refs/heads/staging' }}
+        run:
+           echo "Test Successfull in staging"
+           
+      - name: Purge all files from Imgix Dev
+        if: ${{ github.ref == 'refs/heads/production' }}
+        run:
+           echo "Test Successfull in production"
