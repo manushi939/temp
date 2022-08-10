@@ -1,6 +1,8 @@
 name: Manual-Actions-Workflow-Dev
 on:
   workflow_dispatch:
+env:
+  var: abc
 
 jobs:
   build:
@@ -11,6 +13,7 @@ jobs:
         if: ${{ github.ref == 'refs/heads/main' }}
         run:
            echo "Test Successfull in main"
+           echo "$var"
            
       - name: Purge all files from Imgix Dev
         if: ${{ github.ref == 'refs/heads/development' }}
