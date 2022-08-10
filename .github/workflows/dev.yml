@@ -10,5 +10,4 @@ jobs:
         run : |
           if(${GITHUB_BRANCH##*/}=="development") 
            echo "${GITHUB_BRANCH##*/}" 
-          if(${GITHUB_BRANCH##*/}=="staging")
-           echo "${GITHUB_BRANCH##/}"
+         
