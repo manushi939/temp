@@ -1,13 +1,18 @@
-name: Synchronize Development
+name: Manual-Actions-Workflow-Dev
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Testing
-        run : |
-          if: (${GITHUB_BRANCH##*/}=='development') 
-           echo "${GITHUB_BRANCH##*/}" 
-         
+      - name: Purge all files from Imgix main
+        if: ${{ github.ref == 'refs/heads/main' }}
+        run:
+           echo "Test Successfull in main"
+           
+      - name: Purge all files from Imgix Dev
+        if: ${{ github.ref == 'refs/heads/main/dev' }}
+        run:
+           echo "Test Successfull in dev"
