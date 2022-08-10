@@ -12,7 +12,7 @@ jobs:
       - name: Purge all files from Imgix main
         if: ${{ github.ref == 'refs/heads/main' }}
         run:
-           echo "Test Successfull in main"
+           #echo "Test Successfull in main"
            echo "$var"
            
       - name: Purge all files from Imgix Dev
