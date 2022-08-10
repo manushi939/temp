@@ -8,6 +8,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: Testing
         run : |
-          if(${GITHUB_BRANCH##*/}=="development") 
+          if: (${GITHUB_BRANCH##*/}=="development") 
            echo "${GITHUB_BRANCH##*/}" 
          
